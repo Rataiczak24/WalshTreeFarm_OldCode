@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>The Walsh Tree Farm</title>
+<link href="main.css" rel="stylesheet" type="text/css" />
+ <script src="js-image-slider.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}*/
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+	var slideCount = $('#slider ul li').length;
+	var slideWidth = $('#slider ul li').width();
+	var slideHeight = $('#slider ul li').height();
+	var sliderUlWidth = slideCount * slideWidth;
+	
+	$('#slider').css({ width: slideWidth, height: slideHeight });
+	
+	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+});
+//-->
+</script>
+<style type="text/css"> 
+<!--
+.style3 {font-size: 10px}
+-->
+</style>
+</head>
+<body onload="MM_preloadImages('images/LINKS/home.gif','images/LINKS/thefarmhover.gif','images/LINKS/contactushover.gif','images/LINKS/purchasehover.gif')">
+<div id="container">
+
+<div id="header"><a href="index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('logoheading','','images/LINKS/logoheading.gif',1)"><img src="images/LINKS/logoheading.gif" name="logoheading" width="520" height="128" border="0" id="logoheading" /></a></div>
+
+<div id="line1"></div>
+<div id="line2"></div>
+
+<div id="links">
+&nbsp;<a href="index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Home','','images/LINKS/homehover.gif',1)"><img src="images/LINKS/homeclick.gif" name="Home" width="66" height="20" border="0" id="Home" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="thefarm.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('The Farm','','images/LINKS/thefarm.gif',1)"><img src="images/LINKS/thefarm.gif" name="The Farm" width="102" height="20" border="0" id="The Farm" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="treechoices.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('treechoices','','images/LINKS/treechoiceshover.gif',1)"><img src="images/LINKS/treechoicesclick.gif" name="treechoices" width="130" height="20" border="0" id="treechoices" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="purchase.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('purchase','','images/LINKS/purchasehover.gif',1)"><img src="images/LINKS/purchaseclick.gif" name="purchase" width="99" height="20" border="0" id="purchase" /></a></div>
+
+<div id="background1">
+<div id="tree"><img src="images/LINKS/tree.gif" /></div>
+<div id="pictures">
+<img src="images/side pictures/pictures5.gif" /></div>
+
+<div id="text">
+<p><strong>Hours:</strong><br/>
+<em>We are open the day after Thanksgiving - Saturday, December 22, 2018.</em><br/>
+Monday-Saturday: 10:00 AM - 5:00 PM<br/>
+Sunday: 12:00 PM - 5:00 PM</p>
+
+	<!-- Slide Show Part -->
+
+<div id="sliderFrame">
+        <div id="slider">
+            <img src="images/slideshow photos/1_front_building.jpg" />
+            <img src="images/slideshow photos/1_large_tree.jpg" />
+            <img src="images/slideshow photos/1_cars_loading.jpg" />
+            <img src="images/slideshow photos/1_leaning_on_posts.jpg" />
+            <img src="images/slideshow photos/1_horse_drawn_load.jpg" />
+            <img src="images/slideshow photos/1_light_up_tree.jpg" />
+            <img src="images/slideshow photos/1_meadow.jpg" />
+            <img src="images/slideshow photos/1_Ohio_State_Fair.jpg" />
+            <img src="images/slideshow photos/1_pole_barn.jpg" />
+            <img src="images/slideshow photos/1_ron_planting.jpg" />
+            <img src="images/slideshow photos/1_row.jpg" />
+            <img src="images/slideshow photos/1_rows.jpg" />
+            <img src="images/slideshow photos/1_snowy_tree_field2.jpg" />
+            <img src="images/slideshow photos/1_snowy_tree_field.jpg" />
+            <img src="images/slideshow photos/1_tree_baling.jpg" />
+            <img src="images/slideshow photos/1_tree_field.jpg" />
+            <img src="images/slideshow photos/1_tree_field2.jpg" />
+            <img src="images/slideshow photos/1_tree.jpg" />
+            <img src="images/slideshow photos/1_trees.jpg" />
+            <img src="images/slideshow photos/1_trees2.jpg" />
+            <img src="images/slideshow photos/1_trees3.jpg" />
+        </div>
+        <div class="group1-Wrapper">
+    <a onclick="imageSlider.previous()" class="group1-Prev"></a>
+    <a onclick="imageSlider.next()" class="group1-Next"></a>
+</div>
+    </div>
+
+	<!-- THE END of the slide show part -->
+
+
+
+</div>
+</div>
+
+
+</div>
+<div id="blank_space">blank space</div>
+</body>
+</html>
